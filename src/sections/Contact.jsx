@@ -20,7 +20,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading state
+    setLoading(true);
 
     try {
       await emailjs.sendForm(
@@ -30,12 +30,11 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
-      // Reset form and stop loading
       setForm({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
+      console.error("EmailJS Error:", error);
     } finally {
-      setLoading(false); // Always stop loading, even on error
+      setLoading(false);
     }
   };
 
@@ -43,8 +42,8 @@ const Contact = () => {
     <section id="contact" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
-          title="Get in Touch – Let’s Connect"
-          sub="💬 Have questions or ideas? Let’s talk! 🚀"
+          title="Get in Touch — Let's Connect"
+          sub="💬 Have questions or want to collaborate? Let's talk!"
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
@@ -62,7 +61,7 @@ const Contact = () => {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="What’s your good name?"
+                    placeholder="What's your good name?"
                     required
                   />
                 </div>
@@ -75,7 +74,7 @@ const Contact = () => {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="What’s your email address?"
+                    placeholder="What's your email address?"
                     required
                   />
                 </div>
@@ -105,6 +104,55 @@ const Contact = () => {
                   </div>
                 </button>
               </form>
+            </div>
+
+            {/* Contact Info */}
+            <div className="mt-6 card-border rounded-xl p-6">
+              <h3 className="text-white text-lg font-semibold mb-4">
+                Contact Information
+              </h3>
+              <div className="flex flex-col gap-3 text-white-50 text-sm">
+                <p>
+                  📧{" "}
+                  <a
+                    href="mailto:meriyei.manfer@gmail.com"
+                    className="hover:text-white underline transition-colors"
+                  >
+                    meriyei.manfer@gmail.com
+                  </a>
+                </p>
+                <p>
+                  📱{" "}
+                  <a
+                    href="tel:+573242417672"
+                    className="hover:text-white underline transition-colors"
+                  >
+                    +57 3242417672
+                  </a>
+                </p>
+                <p>
+                  🔗{" "}
+                  <a
+                    href="http://www.linkedin.com/in/meriyei-manosalva-ferrer-b9a159389"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white underline transition-colors"
+                  >
+                    LinkedIn Profile
+                  </a>
+                </p>
+                <p>
+                  🐙{" "}
+                  <a
+                    href="https://github.com/mmanosaslva"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white underline transition-colors"
+                  >
+                    GitHub Profile
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
           <div className="xl:col-span-7 min-h-96">

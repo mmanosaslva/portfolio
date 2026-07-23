@@ -51,8 +51,9 @@ const Hero = () => {
             </div>
 
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Adrian, a developer based in Croatia with a passion for
-              code.
+              Hi, I'm Meriyei — estudiante de Tecnología en Análisis y Desarrollo
+              de Software en el SENA, con enfoque en backend, analítica de datos e
+              integración de LLMs.
             </p>
 
             <Button
